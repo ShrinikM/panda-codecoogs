@@ -7,10 +7,10 @@ type ProductListProp = {
 
 const ProductList = ({ products }: ProductListProp) => {
   if (products.length === 0) {
-    return <p>No products to show.</p>;
+    return <p className="status">No products to show.</p>;
   }
   return (
-    <div>
+    <div className="product-grid">
       {products.map((p) => (
         <ProductCard key={p.id} product={p} />
       ))}

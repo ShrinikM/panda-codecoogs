@@ -5,11 +5,13 @@ import SpendingPage from "./pages/SpendingPage";
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <NavLink to="/">Products</NavLink>
-        <NavLink to="/spending">Spending</NavLink>
-      </nav>
-
+      <header className="site-header">
+        <span className="site-header__brand">PANDA</span>
+        <nav className="site-nav" aria-label="Main">
+          <NavLink to="/">Products</NavLink>
+          <NavLink to="/spending">Spending</NavLink>
+        </nav>
+      </header>
       <Routes>
         <Route path="/" element={<ProductsPage />} />
         <Route path="/spending" element={<SpendingPage />} />

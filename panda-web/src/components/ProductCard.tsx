@@ -1,5 +1,5 @@
 import type { Product } from "../types/product";
-import { formatCheckedAt, formatPrice } from "../utils/format";
+import OfferRow from "./OfferRow";
 
 type ProductCardProps = {
   product: Product;
@@ -7,16 +7,22 @@ type ProductCardProps = {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <div>
-      <p>{product.name}</p>
-      <p>
-        {product.price !== null
-          ? formatPrice(product.price, product.currency)
-          : "Price unavailable"}
-      </p>
-      <a href={product.source_url}>View at {product.store}</a>
-      <p>Last Checked: {formatCheckedAt(product.checked_at)}</p>
-    </div>
+    <article className="product-card">
+      <div className="product-card__header">
+        <h3 className="product-card__name">{product.name}</h3>
+        <span className="sample-badge">Sample</span>
+      </div>
+
+      {product.offers.length === 0 ? (
+        <p>No store offers found for this product.</p>
+      ) : (
+        <ul className="offer-list">
+          {product.offers.map((offer) => (
+            <OfferRow key={offer.id} offer={offer} productName={product.name} />
+          ))}
+        </ul>
+      )}
+    </article>
   );
 };
 

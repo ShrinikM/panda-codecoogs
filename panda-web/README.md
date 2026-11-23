@@ -20,7 +20,7 @@ Open the link it prints (usually http://localhost:5173).
 
 ## What you should see
 
-- "Loading Products..." for half a second, then \_\_\_\_ product cards
+- "Loading Products..." for half a second, then 3 product cards
 - One card shows "Price unavailable" (a product with no price)
 - Clicking **Spending** shows a "coming soon" placeholder page
 

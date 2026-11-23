@@ -15,11 +15,11 @@ function ProductsPage() {
   }, []);
 
   return (
-    <main>
+    <main className="page">
       <h1>Compare prices</h1>
-      <p>(Sample data, not live prices.)</p>
+      <p className="sample-note">(Sample data, not live prices.)</p>
       {isLoading ? (
-        <p>Loading Products...</p>
+        <p className="status">Loading Products...</p>
       ) : (
         <ProductList products={products} />
       )}
